@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<title>Dashboard</title>
+<link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+{% endblock %}
+{% block content %}
+<h3>{{user.username}}</h3>
+<a class="upload" href="{% url 'accounts:upload' username=user.username %}">Upload Material</a>
+{% if user.is_superuser %}
+<br>
+<br>
+<br>
+<a class="upload" href="{% url 'admin_pqs' %}" style="background:#28a745;position:relative;">Check PQs</a>
+<a class="upload" href="{% url 'admin_materials' %}" style="background:orange;position:relative;">Check Materials</a>
+{% endif %}
+<div class="upload_records">
+    <a href="{% url 'accounts:self_uploads' %}" style="text-decoration: none;color:#fff;"><h2>No of Approved Uploads:<br/> <span class="upload_number">{{user.student.uploads}}</span></h2></a>
+</div>
+
+<div class="advertise">
+    <h2>Advertise Goods with Us</h2>
+</div>
+
+{% endblock %}

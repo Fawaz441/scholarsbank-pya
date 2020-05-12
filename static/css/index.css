@@ -1,0 +1,191 @@
+
+.welcome{
+    padding-top:20px;
+    padding-bottom:50px;
+    position: relative;
+    
+}
+
+.welcome ul{
+    position:absolute;
+    top:0;
+}
+
+.materials,.scholarships,.buy_and_sell,.welcome{
+    background-position:center;
+    background-size:cover;
+    height:33vh;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    transition:all 1000ms;
+    position:relative;
+    margin-bottom:3rem;
+}
+
+.scholarships,.buy_and_sell{
+    opacity: 0;
+    transition: 1s;
+    transform:translateY(10px);
+}
+
+.appear{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+.mySlides,.mySlides2,.mySlides3,.welcome_img{
+    position:absolute;
+    width:100%;
+    height:100%;
+}
+
+
+.index_h1{
+    color:white;
+    text-transform:uppercase;
+    letter-spacing:1.4px;
+    z-index:2;
+}
+
+.holder{
+    list-style:none;
+    text-align:center;
+    padding:0;
+    z-index:2;
+    position: relative;
+}
+
+.holder_backdrop{
+ background:rgba(0,0,0,0.7);
+ opacity:0.8;
+ position:absolute;
+ width:100%;
+ height:100%;
+ z-index:1;
+
+}
+
+.holder a{
+    background:#111;
+    opacity:0.9;
+    padding:0.5rem 1.3rem;
+    padding-top:1.2rem;
+    transform:translateY(10px);
+    border:1px #999 solid;
+    border-radius:3px;
+}
+
+.holder a:hover{
+    background:#999;
+
+}
+
+.holder a:hover .items{
+    color:rgb(65, 58, 58);
+}
+
+.items{
+    color:rgb(138, 195, 228);
+}
+
+.landing{display:none;}
+
+
+@media(min-width:600px){
+    .nav{display:none !important;}
+    .cover{padding:0 !important;}
+    .landing{display:block !important;}
+    .mobile{display:none;}
+    *{
+        margin:0;
+        padding:0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    a{
+        text-decoration: none;
+    }
+    
+    .landing{
+        background:rgb(189, 100, 17);
+        height:100vh;
+        width:100vw;
+        position: relative;
+    }
+    .brand{margin-left:1rem;font-size:1.2rem;color:#fff;}
+    .d_nav{
+        height:70px;
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .main_nav{
+        margin-right: 2rem;
+    }
+    
+    .main_nav a{
+        margin-right:1rem;
+        color:#fff;
+        transition:all 0.3s ease-in-out;
+    }
+    
+    .main_nav a:nth-of-type(1){
+        background:red;
+        padding:0.2rem 0.5rem;
+        border-radius: 12px;
+        
+    }
+    
+    .main_nav a:nth-of-type(2):hover,
+    .main_nav a:nth-of-type(3):hover
+    {
+        color:rgb(246, 188, 134);
+    }
+    
+    .intro_container{
+        position:absolute;
+        top:35%;
+        left:200px;
+        width:300px;
+        color:#fff;
+    }
+    
+    .intro_container a{
+        right:0;
+        position: absolute;
+        bottom:-3rem;
+        padding:0.5rem 0.7rem;
+        background:red;
+        color:#fff;
+        border-radius:7px;
+        transition:all 0.6s ease-in-out;
+    }
+    
+    .intro_container a:hover{
+        transform:scale(0.97);
+        /* background:orange; */
+    }
+    
+    .intro_container svg{
+        height:150px;
+        position: absolute;
+        right:120px;
+    }
+    
+    .right_bottom{
+        width:600px;
+        position: absolute;
+        right:0;
+        bottom:0;
+    }
+    
+    
+    
+    
+
+}
+
+

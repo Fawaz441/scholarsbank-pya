@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Delete School</title>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+<h1>Are you Sure you want to delete this School: {{school.name}}?</h1>
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit">
+    <a href="{% url 'schools' %}">Cancel</a>
+</form>
+
+{% endblock %}

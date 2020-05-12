@@ -1,0 +1,51 @@
+.container__{
+    width:70vw;
+    margin:auto;
+    border:2px solid rgb(175, 81, 18);
+    margin-top:5rem;
+}
+
+.one{display:flex;flex-direction: column;}
+
+.container-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.course_header{
+    background:rgb(245, 103, 9);
+    color:#f2f2f2;
+    margin-top:0;
+}
+
+.course_header p {
+    margin:0;
+    padding:0.6rem;
+    text-align:center;
+    font-weight:400;
+}
+
+.select_year{
+    border-left:1px solid rgb(175, 81, 18); 
+}
+
+
+
+.select_year p{
+    margin-left:1rem;
+    padding-bottom:0.5rem;
+    display:flex;   
+    justify-content: center;
+}
+
+.year,.past_question_preview p,.solution_preview p{background:rgb(255, 79, 9);margin:0;margin-left:0 !important;text-align:center;color:#f2f2f2;padding: 0.6rem;}
+.past_question_preview,.solution_preview{height:49%;}
+.past_question_preview {border-bottom:1px solid wheat;}
+.past_question_preview p ,.solution_preview p{display:flex;justify-content:center;align-items:center;background:rgb(0, 187, 109);}
+
+.download_btn{margin-left:42%;padding:1rem;background:rgb(0, 187, 109);border-radius:5px;color:#f2f2f2;text-decoration:none;}
+.select_year{overflow:scroll;height:417.12px;}
+
+
+
+

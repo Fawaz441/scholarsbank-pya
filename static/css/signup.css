@@ -1,0 +1,84 @@
+body{
+    background-color:rgb(240, 227, 227);
+}
+
+.cover{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding-top:2rem;
+}
+
+h1{
+    color:#ffae42;
+    margin-left:1rem;
+}
+
+form{
+
+    background:#FFA220;
+    width:80vw;
+    height:600px;
+    border-radius:3px;
+    display:flex;
+    align-items:center;
+    justify-items:center;
+}
+
+.form-base{
+    transition:all 1000ms;
+    margin:1rem 2rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+h1{
+    color:#f4f4f4;
+}
+
+.helptext,form ul{
+    font-size:0.7rem;
+    margin-bottom:1rem;
+    list-style:disc;
+    color:#FFE3C5;
+}
+
+input{border-radius:5px;border-color:transparent;}
+input:focus{
+    outline-color:#FF9D42;
+    background:#eee;
+}
+
+form :nth-child(7){
+    position:absolute;
+    top:330px;
+}
+
+p{
+    display:grid;
+    height:60px;
+    margin-bottom:0.2rem !important;
+}
+
+p:nth-of-type(1){
+    margin-bottom:1rem !important;
+}
+
+.sign_up_button{
+    background-color:#F3261A;
+    padding:0.5rem;
+    color:#F3EDEA;
+    font-weight:700;
+    border:1px solid #F3331D;
+    margin-top:1rem;
+    border-radius:3px;
+    margin-bottom:2.5rem;
+}
+
+label{font-size:1rem;color:#fff;}
+#id_email{
+    width:100%;
+}
+.footer{display:none;}

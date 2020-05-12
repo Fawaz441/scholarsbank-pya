@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>{{school.name}}</title>
+{% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/school_faculty_list.css' %}">
+<center><h3>{{school.name}}</h3></center>
+<center>
+<div class="search">
+    <input type="text" class="search_school" placeholder="Search courses e.g CPE401">
+    <div class="search-icon"><i class="fas fa-search"></i></div>
+</div>
+</center>
+{% for course in school.courses.all %}
+<ul class="faculty-list">
+    <li class="school">
+        <a href="{% url 'get' pk=course.pk slug=school.slug %}" class="school_link">
+            {{course.code|upper}}
+        </a>
+    </li>
+
+    </ul>
+{% endfor %}
+
+{% endblock %}

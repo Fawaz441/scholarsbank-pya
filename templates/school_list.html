@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+<link rel="stylesheet" href="{% static 'css/school_list.css' %}">
+{% endblock %}
+{% block content %}
+<div class="saver">
+{% if user.is_superuser and user.is_authenticated %}
+    <a href="{% url 'add_school'%}" class="add_school">Add School</a>
+    {% endif %}
+<center>
+<div class="search">
+    <input type="text" class="search_school" placeholder="Search schools">
+    <div class="search-icon"><i class="fas fa-search"></i></div>
+</div>
+</center>
+<div class="school_container">
+    <ul class="school_list">
+        {% for school in school_list %}
+        <li class="school"><a href="{% url 'course_list' slug=school.slug %}" class="school_link">{{ school.name|title }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+<script src="{% static 'js/school_list.js' %}"></script>
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,11 @@
+body{
+    background: #f18c07;
+    display:flex;
+    color:rgb(236, 227, 227);
+    align-items:center;
+    justify-content:center;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{font-size:3rem;}

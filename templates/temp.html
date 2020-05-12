@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Download</title>
+    <link rel="stylesheet" href="{% static 'css/temp.css' %}">
+</head>
+<body>
+<h2>{{coursefiles.school.name}}</h2>
+<h3>{{coursefiles.course.code}}</h3>
+<form method="post" class="form">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Select" class="select_button"
+           style="background:#ffa220;border:1px solid #f3f3f3;color:#f6f6f6;border-radius:3px;padding:0.5rem 1rem;font-weight:500;
+margin-top:1.5rem;"
+    >
+</form>
+<style>.footer{display:none;}</style>
+{% endblock %}
+</body>
+</html>
+

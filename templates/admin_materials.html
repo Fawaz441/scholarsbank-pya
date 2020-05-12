@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user.is_superuser %}
+<h3>Materials</h3>
+{% for material in materials %}
+<li><a href="{{material.file.url}}" target="_blank">{{material.title}}</a>
+    uploaded by {{material.uploader.user.username}} at {{material.created_at}}
+</li>
+{% if not material.approved %}
+<a href="{% url 'approve_material' pk=material.pk%}">Approve</a>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %}
+    {% endblock %}
+    <link rel="stylesheet" href="{% static 'css/base.css' %}"/>
+    <link rel="icon" href="{% static 'images/logo.jpg' %}" type="image/x-icon">
+    <title>ScholarsBank</title>
+</head>
+<body>
+    <div class="nav">
+        <span id="get">
+            <a href = "#">
+                <svg  width="30" height="30">
+                    <path  d="M0,5 30,5" stroke="#fff" stroke-width="5"></path>
+                    <path  d="M0,14 30,14" stroke="#fff" stroke-width="5"></path>
+                    <path  d="M0,23 30,23" stroke="#fff" stroke-width="5"></path>
+                </svg>
+            </a>
+        </span>
+        <div class="khutbah"><a href="{% url 'index' %}" class="brand"><img src="{% static 'images/logo.jpg' %}" height="30"></a></div>
+        {% if user.is_authenticated %}
+        <a class="sign_up" href="{% url 'accounts:logout' %}">Logout</a>
+        {% else %}
+        <a class="sign_up" href="{% url 'accounts:login' %}">Login</a>
+        {% endif %}
+        {% block signup %}
+        {% endblock %}
+    </div>
+    {% if messages %}
+
+    <div class="messages">
+        {% for message in messages %}
+        <div class="alert" role="alert">
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times; </span>
+            </button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="container">
+        
+    
+    <div class="mobile_nav">
+        <a href="#" class="exit"><i class="fa fa-times fa-2x"></i></a>
+        <ul class="mobile_nav_items">
+            {% if user.is_authenticated %}
+            <li class="mobile_nav_item"><a href="{% url 'accounts:dashboard' %}">Dashboard</a></li>
+            {% endif %}
+            <li class="mobile_nav_item"><a href="{% url 'materials' %}">Materials</a></li>
+            <li class="mobile_nav_item"><a href="{% url 'schools' %}">PQs</a></li>
+            <li class="mobile_nav_item"><a href="">Scholarships</a></li>
+            <li class="mobile_nav_item"><a href="">Internships</a></li>
+            <li class="mobile_nav_item"><a href="{% url 'adverts' %}">Buy&Sell</a></li>
+            <!-- <li class="mobile_nav_item">Advertisement</li> -->
+            {% comment %} <li class="mobile_nav_item"><a href="">News</a></li> {% endcomment %}
+        </ul>
+    </div>
+    
+    <div class="backdrop"></div>
+    <div class="cover">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+<div class="footer">
+    <div class="footer-ul">
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Volunteer</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Goals</a></li>
+        
+        <h2 class="contact">Contact</h2>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Whatsapp</a></li>
+        <li><a href="#">Phone: 09082150457,0800342200</a></li>
+        <li><a href="#">Email: ouremail@yahoo.com</a></li>
+    </div>
+    <center>&copy;441</center>
+</div>
+</body>
+{% block script %}
+<script src="{% static 'js/all.js' %}"></script>
+<script src="{% static 'js/index.js' %}"></script>
+<script src="{% static 'js/school_list.js' %}"></script>
+<script>
+    var close = document.querySelector('.close');
+    var message = document.querySelector('.alert');
+    close.addEventListener('click',function(){
+        message.style.display="none";
+    })
+</script>
+{% endblock %}
+</html>
+

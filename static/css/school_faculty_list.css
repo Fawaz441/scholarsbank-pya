@@ -1,0 +1,79 @@
+
+.cover{
+    display: flex;
+    flex-direction: column;
+    margin:0;
+}
+
+h3{
+    color:#0e77b4;
+    font-weight:500;
+    margin:0;
+    margin-bottom:5rem;
+    margin-top:4.7rem;
+    margin-bottom:0.3rem;
+}
+
+.faculty-list{
+    margin:0;
+    width:100%;
+    padding:0;
+}
+
+
+.school{
+        padding:0.4rem;
+        border-bottom:0.1px #2D2B0D solid;
+        background:#FFF7A7;
+        list-style:none;
+
+}
+
+
+.school_link{
+    color:#13151F;
+    font-weight:400;
+    text-decoration:none;
+    display:inline-block;
+    width:100%;
+    padding-left:1rem;
+}
+
+
+
+
+.search{
+    width:100%;
+    margin-bottom: 10px;
+    display:flex;
+    right:1rem;
+    top:0;
+}
+
+.search_school{
+   color:#666;
+   border:#333 solid 0.7px;
+   text-align:center;
+   height:1.4rem;
+   border-top-left-radius:5px;
+   border-bottom-left-radius:5px;
+   width:100%;
+}
+
+.search_school:focus{
+    border-color:#FF7107;
+}
+
+.search-icon{
+    background:orange;
+    height:22.6px;
+    padding-left:5px;
+    padding-right:5px;
+    transform:translateX(-2px) translateY(-0.2px);
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    display:flex;
+    align-items:center;
+
+
+}

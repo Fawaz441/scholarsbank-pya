@@ -1,0 +1,220 @@
+
+
+.container{
+    padding-left:0.5rem;
+    padding-right:0.5rem;
+
+}
+
+.cat_header{
+    font-size:24px;
+    color:rgb(7, 31, 32);
+    margin-bottom:10px;
+}
+
+.categories{
+    display:flex;
+    align-items:center;
+}
+
+.phones_etc,.laptops_etc,.clothes_etc{
+    display:flex;
+    flex-direction:column; 
+    align-items: center;
+    justify-content: center;
+    height:60px;
+    width:60px;
+    border-radius: 50%;
+    margin-right:10px;
+
+}
+
+.phones_etc div,.laptops_etc div,.clothes_etc div{
+    border-radius: 70%;
+
+}
+
+.phones_etc svg,.laptops_etc svg,.clothes_etc svg{
+    height:40px;
+
+}
+
+
+
+.phones_etc{
+    background:linear-gradient(to right,rgb(212, 71, 15),rgb(231, 130, 15));
+   
+
+    
+}
+.clothes_etc{
+    background:linear-gradient(to right,rgb(7, 144, 126),rgb(22, 211, 192));
+
+
+}
+.laptops_etc{
+    background:linear-gradient(to right,rgb(224, 59, 156),rgb(161, 88, 5));  
+}
+
+.jumbo{
+    width:92vw;
+    border-radius:10px;
+}
+
+
+.latest{margin-bottom: 10px;font-size:20px;color:rgb(77, 8, 8);}
+.slide{
+    height:200px;
+    border-radius:10px;
+    box-shadow:2px 2px 7px gray;
+    right:1rem;
+    position:relative;
+    margin-left:1rem;
+    width:70%;
+}
+
+.showcase{
+    margin-top:2rem;
+    margin-right:1rem;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    grid-gap:0.7rem;
+    grid-auto-rows:minmax(170px,auto);
+}
+
+.show1{
+    background:#ffffff;
+    border-radius:5px;
+    box-shadow:2px 2px 1px grey;
+    position: relative;
+    display:flex;
+    flex-direction: column;
+    overflow:hidden;
+}
+
+
+.image{
+    position:absolute;
+    height:65%;
+    width:100%;
+}
+
+.image img{
+    position:absolute;
+    width:100%;
+    height:100%;
+    transition:all 0.5s ease-in-out;
+}
+
+.image img:hover{
+    transform:scale(1.1);
+}
+
+.price{
+    position: absolute;
+    width:100%;
+    height:35%;
+    background:rgb(228, 148, 43);
+    bottom:0;
+    margin:0;
+    font-size:0.8rem;
+    color:#f2f3f4;
+    text-align:center;
+    font-weight: 400;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.price .negotiable{
+    font-size:0.8rem;
+    font-size:10px;
+    background:#3474FF;
+    border-radius:7px;
+    padding:1px 1.5px;
+}
+
+
+
+
+/* For the slides */
+
+
+.holder_backdrop{
+ background:rgba(0,0,0,0.3);
+ opacity:0.4;
+ position:absolute;
+ width:100%;
+ height:100%;
+ z-index:1;
+ border-radius:5px;
+}
+
+
+.holder{
+    list-style:none;
+    text-align:center;
+    padding:0;
+    z-index:2;
+    position: absolute;
+    height:90%;
+    width:100%;
+    margin:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+}
+
+
+.holder a{
+    background:#111;
+    opacity:0.9;
+    padding:0.5rem 1.3rem;
+    padding-top:1.2rem;
+    transform:translateY(10px);
+    border:1px #999 solid;
+    border-radius:3px;
+}
+
+
+.holder a:hover .items{
+    color:rgb(65, 58, 58);
+}
+
+.items{
+    color:rgb(138, 195, 228);
+}
+
+.slide img{
+    position:absolute;
+    height:100%;
+    width:100%;
+    display:block;
+    border-radius:5px;
+}
+
+.index_h1,.index_h2{
+    color:#f4f4f4;
+    font-size:1.2rem;
+    margin:0;
+
+}
+
+
+@media(min-width:500px){
+    .slide{height:250px;}
+    .showcase{
+        grid-template-columns:repeat(4,1fr);
+        grid-auto-rows:minmax(200px,auto);    
+    }
+}
+
+@media(min-width:700px){
+    .slide{height:400px;}
+    .showcase{
+        grid-template-columns:repeat(6,1fr);
+        grid-auto-rows:minmax(250px,auto);    
+    }
+}

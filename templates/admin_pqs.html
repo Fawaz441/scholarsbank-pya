@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+{% if user.is_superuser %}
+<h3>Materials</h3>
+{% for pq in pqs %}
+<li><a href="{{pq.file.url}}" target="_blank">{{pq.title}}</a>
+    uploaded by {{pq.uploader.user.username}} at {{pq.created_at}}
+</li>
+{% if not pq.approved %}
+<a href="{% url 'approve_pq' pk=pq.pk%}">Approve</a>
+{% endif %}
+{% endfor %}
+{% endif %}
+{% endblock content %}

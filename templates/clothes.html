@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/clothes.css' %}">
+<h3>Clothes and Shoes</h3>
+<div class="cloth_items">
+{% for item in object_list %}
+<div class="cloth_item">
+    <a href="{{item.detail}}">
+    <img src="{{item.image.url}}" alt="{{item.title}}">
+    </a>
+    <p>
+        <span style="font-weight:bold;">{{item.name|title}}</span><br>
+        <span style="font-size:0.8rem;">N{{item.price|floatformat:2}}</span>
+    </p>
+</div>
+{% endfor %}
+</div>
+{% endblock %}

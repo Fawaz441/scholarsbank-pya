@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/material.css' %}">
+<div class="searcher">
+<input type="text" class="boxing" placeholder="Search">
+<div class="icon">
+<i class="fas fa-search"></i>
+</div>
+</div><br><br>
+{% for item in material_list %}
+<div class="material">
+<p>{{item.title|title}}</p><br>
+<span>uploaded by {{item.uploader.user.username}}</span><br>
+<a href="{{item.file.url}}" target="_blank" class="download">Download</a>
+</div>
+{% empty %}
+<h3>Nothing here,sorry</h3>
+{% endfor %}
+<script src="{% static 'js/materials.js' %}"></script>
+{% endblock content %}
+

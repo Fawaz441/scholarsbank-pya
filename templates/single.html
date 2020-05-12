@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+<html lang="en">
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <title>Download</title>
+    <link rel="stylesheet" href="{% static 'css/single.css' %}">
+</head>
+<body>
+
+{% if coursefile.file %}
+<h1>{{coursefile.course.school}}</h1>
+<h2>{{coursefile.course.code}}</h2>
+<h5>{{coursefile.course.full_name}}</h5>
+<h6>PQ&nbsp;{{year}}</h6>
+<a href="{{coursefile.file.url}}" class="download_button" target="__blank">Download</a>
+{% else %}
+<p>Not uploaded yet</p>
+{% endif %}
+{% endblock %}
+</body>
+</html>

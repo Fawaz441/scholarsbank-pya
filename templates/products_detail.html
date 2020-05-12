@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load humanize %}
+{% block content %}
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}">
+    <div class="wrapper">
+        <div class="image">
+            <span class="arrow arrow-left"></span>
+            <img src="{{object.image2.url}}" alt="" class="pic2 right-lover">
+            <img src="{{object.image1.url}}" alt="" class="pic1">
+        </div>
+        <div class="details">
+            <p class="title"><span class="name">{{object.name}}</span><span class="price">&#8358;{{object.price|floatformat:2|intcomma}}</span></p>
+            <span class="neg_tag">Negotiable</span>
+            <h2 class="specs">Details</h2>
+            <ul class="all">
+                {% if object.category == 'Phones and Accessories' %}
+                <li>RAM<span class="dash">----------</span>3GB</li>
+                <li>Battery Life<span class="dash">----------</span>4000mAh</li>
+                <li>Internal Storage<span class="dash">----------</span>16GB</li>
+                <li>Screen Size<span class="dash">----------</span>5 inches</li>
+                <li>SIM<span class="dash">----------</span>Nano Sim</li>
+                <li>Main Camera<span class="dash">----------</span>12MP</li>
+                <li>Operating System<span class="dash">----------</span>Android 9</li>
+                <li>Color<span class="dash">----------</span>Gold</li>
+                {% elif object.category == 'Clothing' %}
+                <li>Sex<span class="dash">----------</span>{{object.get_sex_display}}</li>
+                <li>Size<span class="dash">----------</span>{{object.size}}</li>
+                {% endif %}
+
+            </ul>
+            <div class="contact">
+                <div class="icon-cover">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h2 class="seller_det">Seller Details</h2>
+                <ul class="seller_dets">
+                    <li><i class="left fas fa-user"></i><span class="right">{{object.seller.full_name}}</span></li>
+                    <li><i class="left fas fa-location-arrow"></i><span class="right">{{object.seller.location}}</span></li>
+                    <li><i class="rot left fas fa-phone"></i><span class="right">{{object.seller.number}}</span></li>
+                    {% if object.seller.whatsapp_number %}
+                    <a href="https://wa.me/{{object.seller.whatsapp_number}}" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+<script src="{% static 'js/index.js' %}"></script>
+<script>
+var pic1 = document.querySelector('.pic1');
+var pic2 = document.querySelector('.pic2');
+var arrow_left = document.querySelector('.arrow-left');
+var clicked = true;
+
+
+arrow_left.addEventListener('click',function(){
+    if(clicked){
+    // pic1.clasList.add('move-left');
+    pic2.classList.add('shown-from-right');
+    pic1.classList.add('right-lover');
+    pic1.classList.remove('shown-from-right');
+    clicked=false;
+}   
+    else{
+        // pic1.classList.add('move-right');    
+        pic1.classList.add('shown-from-right');
+        pic2.classList.add('right-lover');
+        pic2.classList.remove('shown-from-right');
+        clicked=true;
+    }
+})
+
+
+</script>
+
+{% endblock %}
